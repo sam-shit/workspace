@@ -1,0 +1,41 @@
+<p>createdetails works!</p>
+
+<form (ngSubmit)="savedata(detailsdata)" detailsform="ngForm">
+    <div class="container jumbotron" style="width: 500px;">
+        <label for="actor">actor Name</label>
+        <input type="text" id="actor" name="actor" [(ngModel)]="detailsdata.actor" #actor="ngModel" class="form-control">
+    
+
+    <div>
+        <label for="movieid">Movie ID</label>
+        <select name="movieid" id="movieid" [(ngModel)]="detailsdata.movieid" class="form-control">
+            <option *ngFor="let sd of showdata" [value]="sd.id">
+                {{sd.name}}
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label for="gender">Gender</label>
+        <input type="text" name="gender" id="gender" [(ngModel)]="detailsdata.gender" #gender="ngModel" class="form-control">
+    </div>
+
+    <div>
+        <label for="role">Select Role</label>
+        <select name="role" id="role" [(ngModel)]="detailsdata.role" class="form-control">
+            <option value="Hero">Hero</option>
+            <option value="Heroin">Heroin</option>
+            <option value="Villian">Villian</option>
+            <option value="Comedian">Comedian</option>
+        </select>
+    </div>
+
+    <br>
+    <br>
+
+    <p>
+        <input type="submit" value="save" class="btn btn-success">
+
+    </p>
+</div>
+</form>

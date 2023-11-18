@@ -1,0 +1,19 @@
+<h2>Adding Movie</h2>
+<hr>
+<form (ngSubmit)="saveData(moviedata)" #movieform="ngForm">
+    <div>
+        <label for="name">Movie Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter Movie Name" [(ngModel)]="moviedata.name" required #name="ngModel">
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter Rating" [(ngModel)]="moviedata.rating" required #rating="ngModel">
+    </div>
+    <div>
+        <label for="name">Release Year</label>
+        <input type="text" id="year" name="year" placeholder="Enter Movie year" [(ngModel)]="moviedata.yearRelease" required #yearRelease="ngModel">
+    </div>
+    <br>
+    <br>
+    <input type="submit" value="Save" class="btn btn-Info" [disabled]="!movieform.valid">
+</form>
